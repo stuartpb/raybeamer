@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var sections = ["jacketbase","buttons","pockets","cuffs","collar","belt"]
+
+var names = {
+  jacketbase: "Jacket",
+  buttons: "Buttons",
+  pockets: "Pockets",
+  cuffs: "Cuffs",
+  collar: "Collar",
+  belt: "Bottom Lining"
+}
+
+var coloptions = {
+  jacketbase: ["DarkCyan","DarkOliveGreen","CornflowerBlue",
+    "DarkMagenta","FireBrick","DarkGoldenRod"],
+  buttons: ["SteelBlue","Yellow","Orange"],
+  pockets: ["Gold","Darkorange","GreenYellow"],
+  cuffs: ["Gold","HotPink","SlateBlue"],
+  collar: ["Gold","Crimson","Cornsilk"],
+  belt: ["#222222","Gold","Crimson"]
+}
+
+var jacketsvgdoc
+
+function initJacketHookup(){
+  jacketsvgdoc = document.getElementById("jacket-svg").getSVGDocument()
+}
+
+function changeColor(element,color) {
+  jacketsvgdoc.getElementById(element).style.fill=color
+}
+
+function populateControls() {
+  for (i in sections) {
+    var section = sections[i]
+    var colopts = coloptions[section]
+    var ctr = document.createElement("div")
+    ctr.id = section + "-container"
+    document.getElementById("controls").appendChild(ctr)
+    var header = document.createElement("div")
+    header.innerText = names[section]
+    ctr.appendChild(header)
+    for (j in colopts) {
+      var color = colopts[j]
+      var colbut = document.createElement("button")
+      colbut.style.height = "24px";
+      colbut.style.width = "24px";
+      colbut.style.backgroundColor = color
+      colbut.onclick = function(){changeColor(section,color)}
+      ctr.appendChild(colbut)
+    }
+  }
+}
+</script>
+<style>
+#controls {
+  float: right;
+}
+</style>
+</head>
+<body onload="populateControls()">
+<div id="controls">
+</div>
+<div class="jacket-holder">
+<embed src="jacket.svg" type="image/svg+xml" id="jacket-svg" onload="initJacketHookup()" />
+</div>
+</body>
+</html>
