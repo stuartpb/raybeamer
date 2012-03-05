@@ -2,7 +2,7 @@
 <html>
 <head>
 <script>
-var sections = ["jacketbase","sleeves","collar","trim","snaps","pockets"]
+var sections = ["jacketbase","sleeves","collar","trim","lining","snaps","pockets"]
 
 var excolors = {
   zoomid: {
@@ -127,7 +127,56 @@ var excolors = {
       '#0C1975', //Royal
       '#44235E'  //Purple
     ]
-  } //zoomid
+  }, //zoomid
+  tjs: {
+    wool: [
+      "#031C38", //Navy Blue
+      "#9D6D29", //Old Gold
+      "#007F99", //Teal Blue
+      "#B19861", //Tan
+      "#FCADAF", //Pink
+      "#4F91D4", //Columbia Blue
+      "#C15C03", //Texas Orange
+      "#151515", //Black
+      "#350871", //Purple
+      "#06661A", //Kelly Green
+      "#EC4503", //Orange
+      "#878377", //Grey
+      "#EBAB00", //Gold
+      "#660000", //Cardinal
+      "#BE0113", //Scarlet Red
+      "#052901", //Forest Green
+      "#360214", //Maroon
+      "#103799", //Royal Blue
+      "#351E04", //Brown
+      "#FFFFFF"  //White
+        //(not present when selecting body/sleeves, for some reason)
+    ],
+    leather: [
+      '#817F7A', //Grey
+      '#012F74', //Royal Blue
+      '#E8878E', //Pink
+      '#151515', //Black
+      '#C3A96D', //Tan
+      '#9D6D29', //Old Gold
+      '#2E1E1B', //Brown
+      '#FFFFFF', //White
+      '#D9CF9F', //Natural
+      '#360214', //Maroon
+      '#005212', //Kelly Green
+      '#E19212', //Gold
+      '#052F1E', //Forest Green
+      '#509BBE', //Columbia Blue
+      '#C3A96D', //Vegas Gold
+      '#007F99', //Teal Blue
+      '#031C38', //Navy Blue
+      '#96938E', //Silver/Light Grey
+      '#270F48', //Purple
+      '#BE0113', //Scarlet Red
+      '#EC4503', //Orange
+      '#5D0122'  //Cardinal
+    ]
+  } //tjs
 }
 
 var coloptions = {
@@ -136,17 +185,13 @@ var coloptions = {
   collar: excolors.zoomid.trim,
   trim: excolors.zoomid.trim,
   snaps: excolors.zoomid.snaps,
-  pockets: excolors.zoomid.leather
+  pockets: excolors.zoomid.leather,
+  lining: excolors.zoomid.lining
 }
 
 function changeColor(element,color) {
   document.getElementById(element).style.fill=color
 }
-
-function popColors() {
-
-}
-
 
 function populateControls() {
   sections.forEach(function(section){
@@ -202,6 +247,9 @@ h2 {
   <div id="trim-container">
     <h2>Trim</h2>
   </div>
+  <div id="lining-container">
+    <h2>Lining</h2>
+  </div>
   <div id="snaps-container">
     <h2>Snaps</h2>
   </div>
@@ -211,29 +259,29 @@ h2 {
 </div>
 <div class="jacket-holder">
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="727.15625"
-   height="691.75"
-   id="jacket-svg"
-   version="1.1"
-   inkscape:version="0.48.1 "
-   sodipodi:docname="jacket.svg">
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="727.15625"
+  height="691.75"
+  id="jacket-svg"
+  version="1.1"
+  inkscape:version="0.48.1 "
+  sodipodi:docname="jacket.svg">
   <defs
-     id="defs4" />
+    id="defs4" />
   <metadata
-     id="metadata7">
+    id="metadata7">
     <rdf:RDF>
       <cc:Work
-         rdf:about="">
+        rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+          rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title />
       </cc:Work>
     </rdf:RDF>
@@ -243,29 +291,34 @@ h2 {
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-7.8125,-37.3125)">
-    <path
-       style="fill:#000000;stroke:none"
-       d="m 229.45009,114.93779 42.26713,-42.267125 96.61056,-4.52862 66.41977,21.133561 27.17172,39.248044 -46.79575,221.90239 -137.36814,6.03816 z"
-       id="inkyblackvoid"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccc"
-       inkscape:label="#path3811" />
+    <g
+       id="lining"
+       style="fill:#000000"
+       inkscape:label="#g3023">
+       <path
+          style="stroke:none"
+          d="m 229.45009,114.93779 42.26713,-42.267125 96.61056,-4.52862 66.41977,21.133561 27.17172,39.248044 -46.79575,221.90239 -137.36814,6.03816 z"
+          id="inkyblackvoid"
+          inkscape:connector-curvature="0"
+          sodipodi:nodetypes="cccccccc"
+          inkscape:label="#path3811" />
+    </g>
     <g
        id="trim"
        style="fill:#ffffff"
        inkscape:label="#g3023">
-      <path
-         inkscape:label="#path3825"
-         inkscape:connector-curvature="0"
-         id="lcuff"
-         d="m 167.55895,616.1051 22.6431,60.3816 -36.22896,36.22896 -45.2862,12.07632 -18.114485,-64.91022 z"
-         style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-      <path
-         inkscape:label="#path3837"
-         inkscape:connector-curvature="0"
-         id="rcuff"
-         d="m 560.03937,578.36659 -22.6431,51.32437 12.07632,24.15264 63.40069,19.62402 22.6431,-16.60494 13.58586,-52.8339 z"
-         style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       <path
+          inkscape:label="#path3825"
+          inkscape:connector-curvature="0"
+          id="lcuff"
+          d="m 167.55895,616.1051 22.6431,60.3816 -36.22896,36.22896 -45.2862,12.07632 -18.114485,-64.91022 z"
+          style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       <path
+          inkscape:label="#path3837"
+          inkscape:connector-curvature="0"
+          id="rcuff"
+          d="m 560.03937,578.36659 -22.6431,51.32437 12.07632,24.15264 63.40069,19.62402 22.6431,-16.60494 13.58586,-52.8339 z"
+          style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
        <path
           style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
           d="m 200.76883,608.5574 -3.01908,70.94838 80.00563,27.17172 108.68688,-1.50954 84.53425,-28.68126 54.34344,-37.7385 -3.01908,-58.87206 -131.32999,57.36252 z"
