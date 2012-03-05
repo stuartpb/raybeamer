@@ -4,14 +4,139 @@
 <script>
 var sections = ["jacketbase","sleeves","collar","trim","snaps","pockets"]
 
+var excolors = {
+  zoomid: {
+    body: [
+      '#FFFFFF', //White
+      '#080605', //Black
+      '#9BA3B7', //Grey
+      '#CCCCCC', //Heather Grey
+      '#511E26', //Maroon
+      '#5A0711', //Burgundy
+      '#A00D1E', //Cardinal
+      '#CE1126', //Scarlet
+      '#A04F11', //Texas Orange
+      '#F74902', //Orange
+      '#C6A00C', //Old Gold
+      '#FFC61E', //Light Gold
+      '#0E4D1C', //Dark Green
+      '#007A3D', //Kelly Green
+      '#002654', //Navy
+      '#0C1975', //Royal
+      '#3A75C4', //Columbia Blue
+      '#44235E', //Purple
+      '#593D2B'  //Brown
+    ],
+    trim: [
+      '#FFFFFF', //White
+      '#080605', //Black
+      '#919693', //Grey
+      '#B2A8B5', //Light Grey
+      '#511E26', //Maroon
+      '#5A0711', //Burgundy
+      '#A00D1E', //Cardinal
+      '#CE1126', //Scarlet
+      '#FF9EC9', //Pink
+      '#A04F11', //Texas Orange
+      '#F74902', //Orange
+      '#C6A00C', //Old Gold
+      '#BCAD75', //Vegas Gold
+      '#FCA311', //Athletic Gold
+      '#FFC61E', //Light Gold
+      '#0E4D1C', //Dark Green
+      '#007A3D', //Kelly Green
+      '#00AA9E', //Teal
+      '#002654', //Navy
+      '#0C1975', //Royal
+      '#3A75C4', //Columbia Blue
+      '#44235E', //Purple
+      '#593D2B'  //Brown
+    ],
+    cord: [
+      '#FFFFFF', //White
+      '#080605', //Black
+      '#9BA3B7', //Grey
+      '#441E1C', //Maroon
+      '#5A0711', //Burgundy
+      '#A00D1E', //Cardinal
+      '#CE1126', //Scarlet
+      '#FF9EC9', //Pink
+      '#F74902', //Orange
+      '#C6A00C', //Old Gold
+      '#FCA311', //Athletic Gold
+      '#FFC61E', //Light Gold
+      '#0E4D1C', //Dark Green
+      '#007A3D', //Kelly Green
+      '#00AA9E', //Teal
+      '#002654', //Navy
+      '#0C1975', //Royal
+      '#3A75C4', //Columbia Blue
+      '#44235E'  //Purple
+    ],
+    snaps: [
+      '#FFFFFF', //White
+      '#080605', //Black
+      '#9BA3B7', //Grey
+      '#511E26', //Maroon
+      '#CE1126', //Scarlet
+      '#A04F11', //Texas Orange
+      '#F74902', //Orange
+      '#C6A00C', //Old Gold
+      '#FFC61E', //Athletic Gold
+        //yes, "Athletic Gold" for Snaps is the same color as "Light Gold"
+        //for Body, Trim, and Cord, and different from Trim or Cord's
+        //"Athletic Gold". I checked.
+      '#0E4D1C', //Dark Green
+      '#007A3D', //Kelly Green
+      '#00AA9E', //Teal
+      '#002654', //Navy
+      '#0C1975', //Royal
+      '#3A75C4', //Columbia Blue
+      '#44235E', //Purple
+      '#593D2B'  //Brown
+    ],
+    leather: [
+      '#FFFFFF', //White Leather
+      '#3D332B', //Black Leather
+      '#777772', //Dark Grey Leather
+      '#96938E', //Grey Leather
+      '#C6C1B2', //Bone Leather
+      '#DDDBD1', //Eagle Grey Leather
+      '#493533', //Maroon Leather
+      '#CE1126', //Scarlet Leather
+      '#D14414', //Orange Leather
+      '#FCA311', //Gold Leather
+      '#2B4C3F', //Dark Green Leather
+      '#008C82', //Teal Leather
+      '#353842', //Navy Leather
+      '#0C1975', //Royal Leather
+      '#607C8C', //Columbia Blue Leather
+      '#2B2147', //Purple Leather
+      '#735022', //British Tan Leather
+      '#8C4400', //Carmel Leather
+      '#DBCEA5', //Cream Leather
+      '#E6D395'  //Palamino Leather
+    ],
+    lining: [
+      '#080605', //Black
+      '#9BA3B7', //Grey
+      '#511E26', //Maroon
+      '#CE1126', //Scarlet
+      '#0E4D1C', //Dark Green
+      '#002654', //Navy
+      '#0C1975', //Royal
+      '#44235E'  //Purple
+    ]
+  } //zoomid
+}
+
 var coloptions = {
-  jacketbase: ["DarkCyan","DarkOliveGreen","CornflowerBlue",
-    "DarkMagenta","FireBrick","DarkGoldenRod"],
-  sleeves: ["Cornsilk","CornflowerBlue","LemonChiffon"],
-  collar: ["Gold","Crimson","Cornsilk"],
-  trim: ["#222222","Gold","Crimson","HotPink","SlateBlue"],
-  snaps: ["SteelBlue","Yellow","Orange"],
-  pockets: ["Gold","Darkorange","GreenYellow"]
+  jacketbase: excolors.zoomid.body,
+  sleeves: excolors.zoomid.leather,
+  collar: excolors.zoomid.trim,
+  trim: excolors.zoomid.trim,
+  snaps: excolors.zoomid.snaps,
+  pockets: excolors.zoomid.leather
 }
 
 function changeColor(element,color) {
@@ -42,6 +167,7 @@ function populateControls() {
 <style>
 #controls {
   float: right;
+  width: 20%;
 }
 
 #controls div {
@@ -64,24 +190,24 @@ h2 {
 </head>
 <body onload="populateControls()">
 <div id="controls">
-   <div id="jacketbase-container">
-      <h2>Jacket</h2>
-   </div>
-   <div id="sleeves-container">
-      <h2>Sleeves</h2>
-   </div>
-   <div id="collar-container">
-      <h2>Collar</h2>
-   </div>
-   <div id="trim-container">
-      <h2>Trim</h2>
-   </div>
-   <div id="snaps-container">
-      <h2>Snaps</h2>
-   </div>
-   <div id="pockets-container">
-      <h2>Pockets</h2>
-   </div>
+  <div id="jacketbase-container">
+    <h2>Body</h2>
+  </div>
+  <div id="sleeves-container">
+    <h2>Sleeves</h2>
+  </div>
+  <div id="collar-container">
+    <h2>Collar</h2>
+  </div>
+  <div id="trim-container">
+    <h2>Trim</h2>
+  </div>
+  <div id="snaps-container">
+    <h2>Snaps</h2>
+  </div>
+  <div id="pockets-container">
+    <h2>Pockets</h2>
+  </div>
 </div>
 <div class="jacket-holder">
 <svg
