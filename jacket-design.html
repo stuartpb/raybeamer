@@ -2,27 +2,16 @@
 <html>
 <head>
 <script>
-var sections = ["jacketbase","sleeves","buttons","pockets","cuffs","collar","belt"]
-
-var names = {
-  jacketbase: "Jacket",
-  sleeves: "Sleeves",
-  buttons: "Buttons",
-  pockets: "Pockets",
-  cuffs: "Cuffs",
-  collar: "Collar",
-  belt: "Bottom Lining"
-}
+var sections = ["jacketbase","sleeves","collar","trim","snaps","pockets"]
 
 var coloptions = {
   jacketbase: ["DarkCyan","DarkOliveGreen","CornflowerBlue",
     "DarkMagenta","FireBrick","DarkGoldenRod"],
   sleeves: ["Cornsilk","CornflowerBlue","LemonChiffon"],
-  buttons: ["SteelBlue","Yellow","Orange"],
-  pockets: ["Gold","Darkorange","GreenYellow"],
-  cuffs: ["Gold","HotPink","SlateBlue"],
   collar: ["Gold","Crimson","Cornsilk"],
-  belt: ["#222222","Gold","Crimson"]
+  trim: ["#222222","Gold","Crimson","HotPink","SlateBlue"],
+  snaps: ["SteelBlue","Yellow","Orange"],
+  pockets: ["Gold","Darkorange","GreenYellow"]
 }
 
 function changeColor(element,color) {
@@ -37,12 +26,7 @@ function popColors() {
 function populateControls() {
   sections.forEach(function(section){
     var colopts = coloptions[section]
-    var ctr = document.createElement("div")
-    ctr.id = section + "-container"
-    document.getElementById("controls").appendChild(ctr)
-    var header = document.createElement("h2")
-    header.textContent = names[section]
-    ctr.appendChild(header)
+    var ctr = document.getElementById(section + "-container")
     colopts.forEach(function(color){
       var colbut = document.createElement("button")
       colbut.style.height = "24px";
@@ -80,6 +64,24 @@ h2 {
 </head>
 <body onload="populateControls()">
 <div id="controls">
+   <div id="jacketbase-container">
+      <h2>Jacket</h2>
+   </div>
+   <div id="sleeves-container">
+      <h2>Sleeves</h2>
+   </div>
+   <div id="collar-container">
+      <h2>Collar</h2>
+   </div>
+   <div id="trim-container">
+      <h2>Trim</h2>
+   </div>
+   <div id="snaps-container">
+      <h2>Snaps</h2>
+   </div>
+   <div id="pockets-container">
+      <h2>Pockets</h2>
+   </div>
 </div>
 <div class="jacket-holder">
 <svg
@@ -116,12 +118,6 @@ h2 {
      id="layer1"
      transform="translate(-7.8125,-37.3125)">
     <path
-       style="fill:#ffffff;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 200.76883,608.5574 -3.01908,70.94838 80.00563,27.17172 108.68688,-1.50954 84.53425,-28.68126 54.34344,-37.7385 -3.01908,-58.87206 -131.32999,57.36252 z"
-       id="belt"
-       inkscape:connector-curvature="0"
-       inkscape:label="#path3833" />
-    <path
        style="fill:#000000;stroke:none"
        d="m 229.45009,114.93779 42.26713,-42.267125 96.61056,-4.52862 66.41977,21.133561 27.17172,39.248044 -46.79575,221.90239 -137.36814,6.03816 z"
        id="inkyblackvoid"
@@ -129,7 +125,7 @@ h2 {
        sodipodi:nodetypes="cccccccc"
        inkscape:label="#path3811" />
     <g
-       id="cuffs"
+       id="trim"
        style="fill:#ffffff"
        inkscape:label="#g3023">
       <path
@@ -144,6 +140,12 @@ h2 {
          id="rcuff"
          d="m 560.03937,578.36659 -22.6431,51.32437 12.07632,24.15264 63.40069,19.62402 22.6431,-16.60494 13.58586,-52.8339 z"
          style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       <path
+          style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+          d="m 200.76883,608.5574 -3.01908,70.94838 80.00563,27.17172 108.68688,-1.50954 84.53425,-28.68126 54.34344,-37.7385 -3.01908,-58.87206 -131.32999,57.36252 z"
+          id="belt"
+          inkscape:connector-curvature="0"
+          inkscape:label="#path3833" />
     </g>
     <g
        id="jacketbase"
@@ -214,7 +216,7 @@ h2 {
          style="stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
     <g
-       id="buttons"
+       id="snaps"
        inkscape:label="#g3841"
        style="fill:#ffffff;stroke:#000000">
       <path
