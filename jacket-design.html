@@ -5,7 +5,7 @@
 var sections = ["jacketbase","sleeves","collar","trim",
   "lining","snaps","pockets","chenille","felt"]
 
-//sections whose color is changes by stroke, not fill
+//sections whose color is changed by stroke, not fill
 var stroke_sections = ["felt"]
 
 var excolors = {
@@ -218,6 +218,7 @@ function populateControls() {
       ctr.appendChild(colbut)
     })
   })
+  updatePatch(document.getElementById("patchchars"))
 }
 
 function patchletters(letters) {
@@ -297,7 +298,9 @@ h2 {
 <div id="controls">
   <div id="letter-container">
     <h2>Letter Patch</h2>
-    <input type="text" name="patchchars" maxlength="3" style="text-transform: uppercase" onkeyup="updatePatch(this)">
+    <input id="patchchars" type="text"
+      maxlength="3" style="text-transform: uppercase"
+      onkeyup="updatePatch(this)" value="NA">
     <div id="chenille-container">
       <h3>Chenille</h2>
     </div>
