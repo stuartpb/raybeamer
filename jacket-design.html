@@ -180,19 +180,92 @@ var excolors = {
       '#EC4503', //Orange
       '#5D0122'  //Cardinal
     ]
-  } //tjs
+  }, //tjs
+  na: {
+    wool: [
+      "#FFFFFF", //White
+      "#C60121", //Scarlet
+      "#9A0027", //Cardinal
+      "#950502", //Dark Red
+      "#55122E", //Maroon
+      "#E73907", //Orange
+      "#AE2E02", //Texas Orange
+      "#FBD626", //Gold
+      "#A36E11", //Old Gold
+      "#0EB61B", //Kelly
+      "#233A2D", //Dark Green
+      "#233A2D", //Teal
+      "#556399", //Columbia Blue
+      "#1E2977", //Royal
+      "#151E55", //Dark Royal
+      "#00073E", //Navy
+      "#26095D", //Northwest Purple
+      "#491045", //7000 Purple
+      "#482928", //Brown
+      "#787878", //Grey
+      "#4A4A4A", //Charcoal
+      "#1B1B1B", //Black
+    ],
+    leather: [
+      "#FFFFFF", //White
+      "#62032F", //Maroon
+      "#B3833B", //Gold
+        // selecting this in NA's current site turns the element the same
+        // color as Gold for the body - probably miscoded
+      "#CEC292", //Bone
+      "#D2B86E", //Vegas Gold
+      "#264A59", //Teal
+      "#B5AE80", //Creme
+      "#E8BA39", //Lemon
+      "#5E5E5E", //Grey
+      "#1D1D1D", //Black
+      "#DEDBBE", //Glazed Champagne
+      "#A40018", //Soft Scarlet
+      "#DA2A03", //Soft Orange
+      "#1C2F24", //Soft Dark Green
+      "#47547E", //Soft Columbia Blue
+      "#1C266C", //Royal
+      "#000737", //Soft Navy
+      "#805042", //Soft Nutmeg
+      "#3A2221", //Soft Dark Walnut
+      "#1D1D1D", //Soft Black
+    ],
+    chenille: [ //mostly the same as Wool, but with these changes:
+      //No Texas Orange, Northwest Purple, or Charcoal
+      //7000 Purple appears at the end
+      "#FFFFFF", //White
+      "#C60121", //Scarlet
+      "#9A0027", //Cardinal
+      "#950502", //Dark Red
+      "#55122E", //Maroon
+      "#E73907", //Orange
+      "#FBD626", //Gold
+      "#A36E11", //Old Gold
+      "#0EB61B", //Kelly
+      "#233A2D", //Dark Green
+      "#233A2D", //Teal
+      "#556399", //Columbia Blue
+      "#1E2977", //Royal
+      "#151E55", //Dark Royal
+      "#00073E", //Navy
+      "#482928", //Brown
+      "#787878", //Grey
+      "#1B1B1B", //Black
+      "#491045", //7000 Purple
+    ],
+  }
 }
 
 var coloptions = {
-  jacketbase: excolors.zoomid.body,
-  sleeves: excolors.zoomid.leather,
-  collar: excolors.zoomid.trim,
-  trim: excolors.zoomid.trim,
+  jacketbase: excolors.na.wool,
+  sleeves: excolors.na.leather,
+  collar: excolors.na.leather,
+  trim: excolors.na.wool,
   snaps: excolors.zoomid.snaps,
-  pockets: excolors.zoomid.leather,
+  pockets: excolors.na.leather,
   lining: excolors.zoomid.lining,
-  chenille: excolors.zoomid.trim,
-  felt: excolors.zoomid.trim,
+  chenille: excolors.na.chenille,
+  felt: excolors.na.chenille,
 }
 
 function changeColor(element,color) {
